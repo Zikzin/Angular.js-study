@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>异步加载库</title>
+    <!-- load.js(国内)、 script.js(国外)、都可以帮助我们异步的方式加载js文件-->
+    <script src="bower_components/script.js/dist/script.js"></script>
+    <script>
+        // 方式一
+        // $script('./bower_components/jquery/dist/jquery.js', function(){
+        //     console.log($)
+        // });
+        
+        // 方式二
+        $script([
+            './bower_components/angular/angular.js',
+            './bower_components/jquery/dist/jquery.js'
+        ],function(){
+            console.log(angular);
+            console.log(jQuery);
+        });
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>
